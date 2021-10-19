@@ -20,31 +20,12 @@
             Teléfono: <input type="text" name="telefono" /><br /><br />
             <input type="submit" value="Enviar" name="enviar" />
             <input type="reset" value="Borrar" />
-        
         </form>
-        <?php
-            if(isset($_POST['enviar'])){
-                $consulta='INSERT INTO empleados () VALUES ("","$_POST['dni']","$_POST['nombre']","$_POST['correo']","$_POST['telefono']");';
-                try{
-                    $resultado=mysqli_query($conexion,$consulta);
-                    $fila=mysqli_fetch_array($resultado);
-                    while($fila){
-                        echo '<br />';
-                        echo $fila['IdEmpleado'].' ';
-                        echo $fila['DNI'].' ';
-                        echo $fila['Nombre'];
-                        echo $fila['Correo'];
-                        echo $fila['Telefono'];
-                        $fila=mysqli_fetch_array($resultado);
-                    }
-                }catch(Exception $e){
-                    echo 'Excepción capturada';
-                }
-            }
-            
-            
-        
-            
-        ?>
     </body>
 </html>
+<?php
+    if(isset($_POST['enviar'])){
+        $consulta="INSERT INTO empleados (DNI,Nombre,Correo,Telefono) VALUES ('".$_POST['dni']."','".$_POST['nombre']."','".$_POST['correo']."','".$_POST['telefono']."');";
+        echo 'Consulta enviada correctamente';
+    }     
+?>
