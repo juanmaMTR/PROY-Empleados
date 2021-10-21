@@ -21,11 +21,23 @@
             echo 
             '
                 <form name="modificar" action="#" method="POST">
-                    DNI:<input type="text" name="dni" id="dni" disabled="disabled" value="'.$fila['DNI'].'" /><br />
+                    DNI:<input type="text" name="dni" id="dni" value="'.$fila['DNI'].'" /><br />
                     Nombre:<input type="text" name="nombre" id="nombre" value="'.$fila['Nombre'].'" /><br />
                     Correo:<input type="text" name="correo" id="correo" value="'.$fila['Correo'].'" /><br />
+                    Teléfono:<input type="text" name="telefono" id="telefono" value="'.$fila['Telefono'].'" /><br />
+                    <input type="submit" value="Modificar" name="modificar" />
+                    <input type="submit" value="Cancelar" name="cancelar" />
                 </form>
             ';
+            if(isset($_POST['modificar'])){
+                $consulta='UPDATE empleado SET dni = "'.$_POST['dni'].'", nombre = "'.$_POST['nombre'].'", correo = "'.$_POST['correo'].'", telefono = "'.$_POST['correo'].'" WHERE idEmpleado = '.$fila['IdEmpleado'].';';
+                $resultado=$conexion->query($consulta);
+                echo '<a href="../index.html">Volver al índice</a>';
+                echo 'Datos modificados';
+            }
+            if(isset($_POST['cancelar'])){
+                echo '<a href="../index.html">Volver al índice</a>';
+            }
         ?>
     </body>
 </html>
