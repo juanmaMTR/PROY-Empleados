@@ -26,6 +26,6 @@
 <?php
     if(isset($_POST['enviar'])){
         $consulta="INSERT INTO empleados (DNI,Nombre,Correo,Telefono) VALUES ('".$_POST['dni']."','".$_POST['nombre']."','".$_POST['correo']."','".$_POST['telefono']."');";
-        echo 'Consulta enviada correctamente';
+        echo 'Consulta realizada';
     }     
 ?>

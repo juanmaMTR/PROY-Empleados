@@ -32,8 +32,8 @@
                 $resultado=$conexion->query($consulta);
                 echo '<table>';
                 while($fila=$resultado->fetch_assoc()){
-                    echo '<p>'.$fila['DNI'].': '.$fila['Nombre'].'</p>';
-                    echo '<p><a href="borrar.php?dni='.$fila['DNI'].'">Borrar</a><br />';
+                    echo '<p>'.$fila['DNI'].': '.$fila['Nombre'].'&nbsp&nbsp&nbsp';
+                    echo '<a href="borrar.php?dni='.$fila['DNI'].'">Borrar</a>&nbsp&nbsp&nbsp';
                     echo '<a href="modificar.php?dni='.$fila['DNI'].'">Modificar</a></p>';
                 }
                 
