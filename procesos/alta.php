@@ -21,11 +21,13 @@
             <input type="submit" value="Enviar" name="enviar" />
             <input type="reset" value="Borrar" />
         </form>
+        <a href="../index.html">Volver al índice</a><br />
     </body>
 </html>
 <?php
     if(isset($_POST['enviar'])){
         $consulta="INSERT INTO empleados (DNI,Nombre,Correo,Telefono) VALUES ('".$_POST['dni']."','".$_POST['nombre']."','".$_POST['correo']."','".$_POST['telefono']."');";
+        $resultado=$conexion->query($consulta);
         echo 'Consulta realizada';
     }     
 ?>
