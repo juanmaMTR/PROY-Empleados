@@ -30,7 +30,7 @@
                 </form>
             ';
             if(isset($_POST['modificar'])){
-                $consulta='UPDATE empleado SET dni = "'.$_POST['dni'].'", nombre = "'.$_POST['nombre'].'", correo = "'.$_POST['correo'].'", telefono = "'.$_POST['correo'].'" WHERE idEmpleado = '.$fila['IdEmpleado'].';';
+                $consulta='UPDATE empleados SET dni = "'.$_POST['dni'].'", nombre = "'.$_POST['nombre'].'", correo = "'.$_POST['correo'].'", telefono = "'.$_POST['correo'].'" WHERE idEmpleado = '.$fila['IdEmpleado'].';';
                 $resultado=$conexion->query($consulta);
                 echo '<a href="../index.html">Volver al índice</a>';
                 echo 'Datos modificados';
